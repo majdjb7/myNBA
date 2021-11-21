@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Totally Real Site</title><link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    
+    <div id="inputs">
+        <input type="text" placeholder="Enter team name" id="team">
+        <button id="submit">Get Roster</button>
+    </div>
+    <div class="dataDiv">
+    </div>
+
+    <div class="NBARoster"></div>
+
+
+
+    <script id="players-template" type="text/x-handlebars-template">
+        <div class="dataDiv">
+            {{#each allPlayers}}
+            <div class="playerDiv">
+                <!-- <img src="{{image}}"> -->
+                <p id="name">{{ firstName }} {{ lastName }} </p>
+                <p id="name">{{ jersey }} - {{ position }} </p>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="/main.js"></script>
+
+</body>
+
+</html>
