@@ -18,7 +18,7 @@
 } 
 
 .dataDiv {
-  background-color: lightskyblue;
+  background-color: lightgray;
   text-align: center;
   display: grid;
   grid-gap: 10px;
@@ -37,5 +37,5 @@
 }
 
 #photoHolder {
-  background-color: lightgray;
+  background-color:	#BEBEBE;
 }
