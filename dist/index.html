@@ -25,9 +25,13 @@
         <div class="dataDiv">
             {{#each allPlayers}}
             <div class="playerDiv">
-                <img src="{{photo}}">
-                <p id="name">{{ firstName }} {{ lastName }} </p>
-                <p id="name">{{ jersey }} - {{ position }} </p>
+                <p id="name">{{ firstName }} {{ lastName }}</p>
+                <p id="name">{{ jersey }}</p>
+
+                <div>
+                    <img  id="photoHolder" src="{{photo}}">
+                </div>
+                <p id="name">{{ position }}</p>
             </div>
             {{/each}}
         </div>
