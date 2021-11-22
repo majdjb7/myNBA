@@ -1,4 +1,3 @@
-// const APIManager = require('./dist/APIManager')
 
 const express = require('express')
 const path = require('path')
@@ -34,7 +33,8 @@ app.get('/teams/:teamName', function (request, response) {
                 firstName: player.firstName,
                 lastName: player.lastName,
                 jersey: player.jersey,
-                position: player.pos
+                position: player.pos,
+                photo: `https://nba-players.herokuapp.com/players/${player.lastName}/${player.firstName}`
             }
         })
         response.send(finalTeamInfo)
