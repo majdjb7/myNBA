@@ -9,7 +9,6 @@ const teamToIDs = {
     "heat": "1610612748",
     "suns": "1610612756"
 }
-
 router.get('/teams/:teamName', function (request, response) {
     const myTeam = request.params.teamName
     const myTeamId = teamToIDs[myTeam]
@@ -33,6 +32,34 @@ router.get('/teams/:teamName', function (request, response) {
         response.send(finalTeamInfo)
     });
     
+})
+
+// ------------------------------------------------ NBA Part II ------------------------------------------------
+router.put('/team', function(req, res) {
+    let teamName = req.body.teamName
+    let teamId = req.body.teamId
+    teamToIDs[`${teamName}`] = teamId
+    res.end()
+})
+
+let dreamTeam = []
+
+router.get('/dreamTeam', function(req, res) {
+    res.send(dreamTeam)
+    
+
+    res.end()
+})
+
+router.post('/addPlayer', function(req, res) {
+    let player = req.body
+    if(dreamTeam.length<5) {
+        dreamTeam.push(player)
+    }
+    else{
+        console.log("More than 5")
+    }
+    res.end()
 })
 
 module.exports = router
